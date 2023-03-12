@@ -1,5 +1,5 @@
 import './App.css';
-import Url from "./Components/Url/Url";
+import Url from "./components/Url/Url";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
 
