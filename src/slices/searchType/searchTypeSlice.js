@@ -5,19 +5,19 @@ const initialState = {
   type: Enums.API
 };
 
-const searchTypeSlice = createSlice({
+const searchType = createSlice({
   name: 'type',
   initialState,
   reducers: {
     setType: (state, action) => {
       const { searchType } = action.payload;
-      state.searchType = searchType;
+      state.type = searchType;
     },
   },
 })
 
 export const {
   setType
-} = searchTypeSlice.actions;
+} = searchType.actions;
 
-export default searchTypeSlice.reducer;
+export default searchType.reducer;

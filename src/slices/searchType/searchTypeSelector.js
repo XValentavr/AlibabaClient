@@ -1,1 +1,2 @@
-export const getSearchTypeSelector = state => state.type.searchType
+export const getSearchTypeSelector = state => state.searchType.type
+

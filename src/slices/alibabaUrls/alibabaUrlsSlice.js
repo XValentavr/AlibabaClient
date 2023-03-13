@@ -3,7 +3,7 @@ import { ASYNC_STATE } from "../../helpers/enums";
 import fetchAlibabaUrls from "./alibabaUrlsThunk/fetchAlibabaUrls";
 
 const initialState = {
-  url: {},
+  alibabaUrls: {},
   alibabaUrlsLoaded: null
 };
 
@@ -17,6 +17,7 @@ const AlibabaUrlsSlice = createSlice({
     },
     [fetchAlibabaUrls.fulfilled]: (state, action) => {
       state.alibabaUrlsLoaded.status = ASYNC_STATE.SUCCEEDED;
+      state.alibabaUrls.urls = action.payload
     }
   },
   [fetchAlibabaUrls.rejected]: (state, action) => {

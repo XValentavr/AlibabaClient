@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import searchTypeSlice from "../slices/searchType/searchTypeSlice";
+import searchType from "../slices/searchType/searchTypeSlice";
 
 export const reducer = combineReducers({
-  searchTypeSlice
+  searchType
 })
