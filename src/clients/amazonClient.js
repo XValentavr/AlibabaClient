@@ -30,13 +30,15 @@ class AmazonClient {
   }
 
 
-  getAmazonProduct = async (alibabaUrl, searchType) => {
+  getAmazonProduct = async (amazonUrl, searchType) => {
     return this._makeRequest(`/amazon`, {
       params: {
-        alibabaUrl,
+        amazonUrl,
         searchType
       },
     });
   }
 }
+
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new AmazonClient();

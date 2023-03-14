@@ -1,6 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from "./сombiner";
+import { configureStore } from "@reduxjs/toolkit";
+import searchTypeActions from "../slices/searchType/searchTypeSlice";
+import alibabaUrlsActions from "../slices/alibabaUrls/alibabaUrlsSlice";
 
-export const store = configureStore({
-  reducer,
+const store = configureStore({
+  reducer: {
+    searchType: searchTypeActions.reducer,
+    alibabaUrls: alibabaUrlsActions.reducer,
+  }
 })
+export default store

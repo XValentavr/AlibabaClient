@@ -16,8 +16,5 @@ const searchType = createSlice({
   },
 })
 
-export const {
-  setType
-} = searchType.actions;
-
-export default searchType.reducer;
+export const searchTypeActions = searchType.actions
+export default searchType

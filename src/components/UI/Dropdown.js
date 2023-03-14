@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { Enums } from "../../helpers/enums";
 import { useDispatch } from "react-redux";
-import { setType } from "../../slices/searchType/searchTypeSlice";
+import { searchTypeActions } from "../../slices/searchType/searchTypeSlice";
 
 const Dropdown = () => {
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ const Dropdown = () => {
   const changeSearchType = useCallback(event => {
 
     const searchType = event.target.value
-    dispatch(setType({ searchType }));
+    dispatch(searchTypeActions.setType({ searchType }));
   }, [dispatch])
 
   return (

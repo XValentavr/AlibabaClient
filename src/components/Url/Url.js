@@ -1,17 +1,19 @@
 import Dropdown from "../UI/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchTypeSelector } from "../../slices/searchType/searchTypeSelector";
-import fetchAlibabaUrls from "../../slices/alibabaUrls/alibabaUrlsThunk/fetchAlibabaUrls";
+import getAlibabaUrls from "../../handlers/alibabaUrlHandler";
+import { getUrls } from "../../slices/alibabaUrls/alibabaUrlsSelectors";
 
 const Url = () => {
   const dispatch = useDispatch()
   const searchType = useSelector(getSearchTypeSelector)
-
-  const getAmazonHandler = async event => {
+  const urls = useSelector(getUrls)
+  const getAmazonHandler = event => {
     event.preventDefault()
-    const alibabaUrl = event.target.url.value
-    await dispatch(fetchAlibabaUrls({ alibabaUrl, searchType }))
+    const amazonUrl = event.target.url.value
+    dispatch(getAlibabaUrls(amazonUrl, searchType))
   }
+
   return (
     <>
       <form onSubmit={getAmazonHandler}>
