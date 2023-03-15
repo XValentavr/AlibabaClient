@@ -37,7 +37,7 @@ const Url = () => {
         <button>Submit</button>
       </form>
       <Dropdown/>
-      {status === ASYNC_STATE.FAILED && urls ? <Error/> :
+      {status === ASYNC_STATE.FAILED ? <Error/> :
         <Similarity similarity={urls} amazonUrl={amazon}/>}
     </>
   );
